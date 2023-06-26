@@ -4,8 +4,8 @@ import './ThreeTeenthPage.scss'
 const ThreeteenthPage = () => {
     const navigate = useNavigate();
     return (
-            <div>
-                <Header/>
+        <div>
+            <Header />
             <div className='thirdteen-content'>
                 <div className='left'><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Declarations </div>
                     <div className='Current-location'>Warning:</div>
@@ -291,10 +291,10 @@ const ThreeteenthPage = () => {
                         </div>
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/twelvethpage')} >Previous</button>
-                        <button onClick={() => navigate('/threeteenthpage')} style={{ marginLeft: "60em" }}>Submit</button></div>
+                        <button onClick={() => navigate('/twelvethpage')} style={{ marginLeft: "10px" }}>Previous</button>
+                        <button onClick={() => navigate('/fourteenpage')} style={{ marginLeft: "60em" }}>Next</button></div>
                 </div>
-                    
+
                 <div className="right">
                     <div className="up-content">
                         <div className="title-right">Related Links</div>
@@ -317,7 +317,7 @@ const ThreeteenthPage = () => {
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     )
 }
 

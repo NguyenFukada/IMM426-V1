@@ -33,7 +33,7 @@ const FourPage = () => {
                         </Form>
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/thirdpage')} >Previous</button>
+                        <button onClick={() => navigate('/thirdpage')} style={{ marginLeft: "10px" }}>Previous</button>
                         <button onClick={() => navigate('/fifthpage')} style={{ marginLeft: "60em" }}>Next</button>
 
                     </div>

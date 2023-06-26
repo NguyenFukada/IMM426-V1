@@ -327,7 +327,7 @@ const EleventhPage = () => {
                         </div>
                     </div>
                     <div style={{ display: "flex",  paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/tenthpage')} >Previous</button>
+                        <button onClick={() => navigate('/tenthpage')} style={{ marginLeft: "10px" }}>Previous</button>
                         <button onClick={() => navigate('/twelvethpage')} style={{ marginLeft: "60em" }}>Next</button></div>
                 </div>
                     

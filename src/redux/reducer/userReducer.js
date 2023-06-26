@@ -29,8 +29,6 @@ const userReducer = (state = INITSTATE, action) => {
                     datOfBirth: action.payload.DateOfBirth,
                     Passportnumber: action.payload.passportNumber,
                     CountryOfPassport: action.payload.value,
-
-
                 }
             };
         case 'FETCH_DEGREE':

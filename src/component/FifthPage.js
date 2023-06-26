@@ -95,7 +95,7 @@ const FifthPage = () => {
                         <span className="inputform"><input className='form-control col-6'></input></span>
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/fourthpage')} >Previous</button>
+                        <button onClick={() => navigate('/fourthpage')} style={{ marginLeft: "10px" }} >Previous</button>
                         <button onClick={() => navigate('/sixthpage')} style={{ marginLeft: "60em" }}>Next</button></div>
                     </div>
                     

@@ -135,7 +135,7 @@ const NinePage = () => {
                         <Select options={optionsCountry} className="select" />
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/eightpage')} >Previous</button>
+                        <button onClick={() => navigate('/eightpage')} style={{ marginLeft: "10px" }}>Previous</button>
                         <button onClick={() => navigate('/tenthpage')} style={{ marginLeft: "60em" }}>Next</button></div>
                 </div>
                     

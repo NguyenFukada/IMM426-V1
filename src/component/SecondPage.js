@@ -309,7 +309,7 @@ const SecondPage = () => {
                         </div>
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/firstpage')} >Previous</button>
+                        <button onClick={() => navigate('/firstpage')} style={{ marginLeft: "10px" }}>Previous</button>
                         <button onClick={() => handleNextPage()} style={{ marginLeft: "60em" }}>Next</button>
 
                     </div>

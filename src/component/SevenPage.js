@@ -51,7 +51,7 @@ const SevenPage = () => {
                     </table>
                     <button onClick={() => navigate('/detail-studies')}>Add</button>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/sixthpage')} >Previous</button>
+                        <button onClick={() => navigate('/sixthpage')} style={{ marginLeft: "10px" }}>Previous</button>
                         <div><button onClick={() => navigate('/eightpage')} style={{ marginLeft: "60em" }}>Next</button></div></div>
                 </div>
                     

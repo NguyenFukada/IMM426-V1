@@ -50,7 +50,7 @@ const SixPage = () => {
                     </div>
                     <div style={{ paddingLeft: "10px" }}>Note: The holder of this email address may receive a verification email from the Department if the address has not already been verified. If the address holder receives a verification email, they should click on the link to verify their address before this application is submitted.</div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
-                        <button onClick={() => navigate('/fifthpage')} >Previous</button>
+                        <button onClick={() => navigate('/fifthpage')} style={{ marginLeft: "10px" }}>Previous</button>
                         <button onClick={() => navigate('/sevenpage')} style={{ marginLeft: "60em" }}>Next</button></div>
                     </div>
                     

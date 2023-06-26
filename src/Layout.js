@@ -17,6 +17,8 @@ import TwelvethPage from './component/TwelvethPage';
 import ThreeteenthPage from './component/ThreeTeenthPage';
 import Header from './component/Header';
 import FirstPage from './component/FirstPage';
+import FourteenPage from './component/FourteenPage';
+import SubmitPage from './component/SubmitPage';
 const Notfound = () => {
     return (
         <div className='container mt-3 d-flex justify-content-center alert alert-danger '>404.Not found data with your current URL</div>
@@ -41,6 +43,8 @@ const Layout = () => {
             <Route path="/eleventhpage" element={<EleventhPage />}></Route>
             <Route path="/twelvethpage" element={<TwelvethPage />}></Route>
             <Route path="/threeteenthpage" element={<ThreeteenthPage />}></Route>
+            <Route path="/fourteenpage" element={<FourteenPage />}></Route>
+            <Route path="/submitpage" element={<SubmitPage />}></Route>
             
         </Routes>
     )
