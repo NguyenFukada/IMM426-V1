@@ -1,0 +1,183 @@
+.second-content{
+    display: flex;
+    .left{
+        width: 70%;
+        .secondpage-container {
+    .status {
+        display: flex;
+
+        .title-status {
+            width  : 30%;
+            padding: 10px 10px;
+        }
+
+        .select {
+            width        : 50%;
+            padding-right: 50px;
+        }
+
+    }
+
+    .Current-location {
+        padding-left: 10px;
+
+        .form-check-label {
+            display: flex;
+
+            .check-radio {
+                width: 30%;
+            }
+
+            .check-radio-answer {
+                display: flex;
+                gap    : 10px;
+
+                .form-check {
+                    min-height : 1.5rem !important;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .form-check-label-question2 {
+        .mb-3 {
+            gap: 10px;
+
+            .question2 {
+                padding-left: 37.5em;
+            }
+        }
+    }
+
+    .DatePicker {
+        padding-left: 10px;
+        display     : flex;
+
+        .child-date {
+            padding-left: 26em;
+        }
+
+    }
+
+    .parent {
+        display       : flex;
+        padding-bottom: 5px;
+        padding-left  : 10px;
+
+        .title {
+            width      : 30%;
+            padding-top: 10px;
+        }
+    }
+
+    .Sexform {
+        display: flex;
+
+        padding-left: 10px;
+
+        .form-check-label {
+            display: flex;
+
+            .check-radio {
+                width: 30%;
+            }
+
+            .check-radio-answer {
+                display     : flex;
+                gap         : 10px;
+                padding-left: 23em;
+
+                .form-check {
+                    min-height : 1.5rem !important;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .DatePicker2 {
+        display     : flex;
+        padding-left: 10px;
+
+        .child-date {
+            padding-left  : 19em;
+            padding-bottom: 5px;
+        }
+    }
+
+    .status2 {
+        display: flex;
+
+        .title-status {
+            width: 30%;
+        }
+
+        .select {
+            width        : 50%;
+            padding-right: 50px;
+        }
+    }
+}}
+    
+.right {
+            background-color: #bebfc7;
+            width : 30%;
+            .up-content{
+                padding-left: 10px;
+                background-color: white;
+                background-clip: content-box;
+                border: 1px solid #ccc;
+                padding-bottom: 10px;
+                .title-right {
+                font-size   : 20px;
+                color       : white;
+                background  : #072243;
+                padding-left: 20px;
+                font-weight : 600;
+            }
+            .content-right{
+                padding-left: 20px;
+                 font-size   : 20px;
+            }
+            }
+             .down-content{
+                padding-left: 10px;
+                background-color: white;
+                background-clip: content-box;
+                border: 1px solid #ccc;
+                padding-bottom: 10px;
+                .title-right {
+                font-size   : 20px;
+                color       : white;
+                background  : #072243;
+                padding-left: 20px;
+                font-weight : 600;
+            }
+            .content-right{
+                padding-left: 20px;
+                 font-size   : 20px;
+            }
+            }
+            
+        }
+}
+
+.form-check {
+    min-height : 1.5rem !important;
+    margin-left: 10px;
+}
+.table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

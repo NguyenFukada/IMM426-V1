@@ -1,0 +1,42 @@
+.header-content {
+            .title1 {
+                border          : 1px solid red;
+                align-items     : center;
+                justify-content : center;
+                display         : flex;
+                padding         : 20px 10px;
+                font-size       : 20px;
+                font-weight     : 600;
+                background-color: #072243;
+                color: white;
+            }
+
+            .title2 {
+                height          : 200px;
+                border          : 1px solid #ccc;
+                background-color: #072243;
+                display         : flex;
+                gap             : 10px;
+
+                .wc-heading {
+                    z-index    : 100;
+                    color      : white;
+                    margin-left: 32em;
+                    margin-top : 60px;
+                }
+                .image{
+                    height: 150px;
+                }
+                .child {
+
+                    border: 1px solid red;
+                }
+            }
+            .title3{
+                background-color: #072243;
+                z-index: 100;
+                color: white;
+                font-size: 18px;
+                padding-left: 10px;
+            }
+        }
