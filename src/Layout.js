@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes,Navigate } from "react-router-dom";
 import App from './App';
 import SecondPage from './component/SecondPage';
 import NationCard from './component/FormNationCard';
@@ -27,7 +27,7 @@ const Notfound = () => {
 const Layout = () => {
     return(
         <Routes>
-            <Route path="/" element={<App />}></Route>
+            <Route path="/demo" element={<App />}></Route>
             <Route path="/firstpage" element={<FirstPage />}></Route>
             <Route path="/secondpage" element={<SecondPage />}></Route>
             <Route path="/national-identity-card" element={<NationCard />}></Route>
@@ -45,7 +45,10 @@ const Layout = () => {
             <Route path="/threeteenthpage" element={<ThreeteenthPage />}></Route>
             <Route path="/fourteenpage" element={<FourteenPage />}></Route>
             <Route path="/submitpage" element={<SubmitPage />}></Route>
-            
+            <Route
+                path="/"
+                element={<Navigate to="/demo/" replace />}
+            />
         </Routes>
     )
 }
