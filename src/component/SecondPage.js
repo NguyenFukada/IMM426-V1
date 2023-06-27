@@ -259,10 +259,10 @@ const SecondPage = () => {
                             <th> Actions</th>
                         </tr>
                         <tr>
-                            <td>{CloneSate.familyName}</td>
-                            <td>{CloneSate.givenName}</td>
-                            <td>{CloneSate.Identify}</td>
-                            <td>{CloneSate.countryIss}</td>
+                            <td>{CloneSate?.familyName ? CloneSate.familyName : "default"}</td>
+                            <td>{CloneSate?.givenName ? CloneSate.givenName : "default"}</td>
+                            <td>{CloneSate?.Identify ? CloneSate.Identify : "default"}</td>
+                            <td>{CloneSate?.countryIss ? CloneSate.countryIss :"default"}</td>
                             <td>Edit/Delete</td>
                         </tr>
                     </table>
