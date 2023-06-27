@@ -41,17 +41,6 @@ const SecondPage = () => {
         return formattedToday;
     }
     const handleNextPage =  async () => {
-        let DateOfBirth = FormatDate(startDate);
-        let familyName = account.familyName;
-        let givenName = account.givenName;
-        let Identification = account.Identification;
-        let countryIssue = account.countryIssue
-        dispatch({
-            type: 'FETCH_SAVE_USER',
-            payload: {
-                familyName, givenName, Identification, countryIssue
-            }
-        })
         navigate('/thirdpage');
         
     }
@@ -134,7 +123,7 @@ const SecondPage = () => {
     }
 
     const HandleChangeInputText = (value, Title) => {
-        let CloneState = _.cloneDeep(   );
+        let CloneState = _.cloneDeep(SaveDataPageTwo);
         CloneState[Title] = value;
         setSaveDataPageTwo(CloneState)
     }
@@ -149,7 +138,8 @@ const SecondPage = () => {
         window.localStorage.setItem('SaveDataPageTwo', JSON.stringify(SaveDataPageTwo))
     }, [SaveDataPageTwo])
 
-    console.log("Account: ",account);
+    let CloneSate = _.cloneDeep(window.localStorage.getItem('SaveDataFormNation'))
+    CloneSate = JSON.parse(CloneSate);
     return (
         <>
             <Header />
@@ -269,10 +259,10 @@ const SecondPage = () => {
                             <th> Actions</th>
                         </tr>
                         <tr>
-                            <td>{account.familyName}</td>
-                            <td>{account.givenName}</td>
-                            <td>{account.Identification}</td>
-                            <td>{account.countryIssue}</td>
+                            <td>{CloneSate.familyName}</td>
+                            <td>{CloneSate.givenName}</td>
+                            <td>{CloneSate.Identify}</td>
+                            <td>{CloneSate.countryIss}</td>
                             <td>Edit/Delete</td>
                         </tr>
                     </table>
