@@ -48,30 +48,6 @@ const FourteenPage = () => {
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                <Accordion defaultActiveKey="1">
-                    <Accordion.Item eventKey="0">
-                        <Accordion.Header>
-                            Evidence ...	
-                        </Accordion.Header>
-                        <Accordion.Body>
-                            <div>
-                                <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Add documents</div>
-                                <div style={{ display: "flex", paddingTop: "5px" }}>
-                                    <div style={{ paddingLeft: "10px", paddingRight: "20em" }}>Document Type</div>
-                                    <div>Letter of Government Support - Working Holiday Maker Programme</div>
-                                </div>
-                                <div style={{ display: "flex", paddingTop: "5px" }}>
-                                    <div style={{ paddingLeft: "10px", paddingRight: "22em" }}>Description</div>
-                                    <input></input>
-                                </div>
-                                <div style={{ display: "flex", paddingTop: "5px" }}>
-                                    <div style={{ paddingLeft: "10px", paddingRight: "22.4em" }}>File names</div>
-                                    <input type='file'></input>
-                                </div>
-                            </div>
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
                 <Accordion defaultActiveKey="2">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
