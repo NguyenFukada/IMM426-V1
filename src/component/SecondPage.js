@@ -13,7 +13,7 @@ const SecondPage = () => {
 
     const dispatch = useDispatch();
     const [startDate, setStartDate] = useState(new Date());
-    const [passportNumber, setPassportNumber] = useState("");
+
     const navigate = useNavigate();
     const options = [
         { value: 'De Facto', label: 'De Facto' },
@@ -24,11 +24,9 @@ const SecondPage = () => {
         { value: 'Separated', label: 'Separated' },
         { value: 'Widowed', label: 'Widowed' }
     ]
-    const [value, setValue] = useState('')
+    
     const optionsCountry = useMemo(() => countryList().getData(), [])
-    const changeHandler = value => {
-        setValue(value)
-    }
+    
     const account = useSelector(state => state.user.account);
     const FormatDate = (value) => {
         const today = value;
@@ -46,10 +44,12 @@ const SecondPage = () => {
         let DateOfBirth = FormatDate(startDate);
         let familyName = account.familyName;
         let givenName = account.givenName;
+        let Identification = account.Identification;
+        let countryIssue = account.countryIssue
         dispatch({
             type: 'FETCH_SAVE_USER',
             payload: {
-                passportNumber, value, DateOfBirth, familyName, givenName
+                familyName, givenName, Identification, countryIssue
             }
         })
         navigate('/thirdpage');
@@ -134,7 +134,7 @@ const SecondPage = () => {
     }
 
     const HandleChangeInputText = (value, Title) => {
-        let CloneState = _.cloneDeep(SaveDataPageTwo);
+        let CloneState = _.cloneDeep(   );
         CloneState[Title] = value;
         setSaveDataPageTwo(CloneState)
     }
@@ -149,7 +149,7 @@ const SecondPage = () => {
         window.localStorage.setItem('SaveDataPageTwo', JSON.stringify(SaveDataPageTwo))
     }, [SaveDataPageTwo])
 
-
+    console.log("Account: ",account);
     return (
         <>
             <Header />
@@ -196,7 +196,7 @@ const SecondPage = () => {
                     <div className="DatePicker2">
                         <div >Date of birth</div>
                         <div className="child-date" ><DatePicker 
-                            selected={Date.parse(SaveDataPageTwo.dateOfExpire)} 
+                            selected={Date.parse(SaveDataPageTwo.dateOfBirth)} 
                             onChange={(dateOfBirth) => handleSetStartDate(dateOfBirth,"dateOfBirth")}/>  </div>
                     </div>
                     <div className='parent'>

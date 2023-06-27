@@ -25,20 +25,11 @@ const userReducer = (state = INITSTATE, action) => {
                     givenName: action.payload.givenName,
                     Identification: action.payload.Identification,
                     countryIssue: action.payload.countryIssue,
-                    datOfBirth: action.payload.DateOfBirth,
-                    Passportnumber: action.payload.passportNumber,
-                    CountryOfPassport: action.payload.value,
                 }
             };
         case 'FETCH_DEGREE':
             return {
                 ...state, account: {
-                    familyName: "",
-                    givenName: "",
-                    Identification: "",
-                    datOfBirth: "",
-                    Passportnumber: "",
-                    CountryOfPassport: "",
                     Qualification: action.payload.Qualification,
                     Institution: action.payload.Institution,
                     Course: action.payload.Course,
