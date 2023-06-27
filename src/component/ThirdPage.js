@@ -7,20 +7,16 @@ import { useState } from 'react';
 import _, { cloneDeep } from "lodash"
 const ThirdPage = (props) => {
     const navigate = useNavigate();
-    const account = useSelector(state => state.user.account);
+    
+    const formatDate = (input) => {
+        let datePart = input.match(/\d+/g),
+            year = datePart[0].substring(2), // get only two digits
+            month = datePart[1], day = datePart[2];
 
-    const FormatDate = (value) => {
-        const today = value;
-        const yyyy = today.getFullYear();
-        let mm = today.getMonth() + 1; // Months start at 0!
-        let dd = today.getDate();
-
-        if (dd < 10) dd = '0' + dd;
-        if (mm < 10) mm = '0' + mm;
-
-        const formattedToday = dd + '/' + mm + '/' + yyyy;
-        return formattedToday;
+        return day + '/' + month + '/' + "20"+year;
     }
+
+    
 
 
     const handleOnChange = (Flag, Question) => {
@@ -85,7 +81,7 @@ const ThirdPage = (props) => {
                     <div style={{ display: "flex" }}>
                         <span>Date of birth:</span>
                         <span style={{ paddingLeft: "50px" }}>{CloneData?.dateOfBirth ? 
-                            CloneData.dateOfBirth.substring(0, 10) : "default"}</span>
+                            formatDate(CloneData.dateOfBirth.substring(0, 10)) : "default"}</span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Country of birth:</span>

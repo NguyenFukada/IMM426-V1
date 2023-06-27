@@ -319,7 +319,7 @@ const SecondPage = () => {
                     </div>
                     <div className='Current-location'>Citizenship</div>
                     <div className='Current-location'>
-                        <span>Is this applicant a citizen of the selected country of passport (INDONESIA)?</span>
+                        <span>Is this applicant a citizen of the selected country of passport ?</span>
                         <div class="form-check-label" >
                             <div className="check-radio"></div>
                             <div class="form-check-label" >
