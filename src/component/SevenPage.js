@@ -11,7 +11,9 @@ const SevenPage = () => {
         <>
         <Header/>
             <div className="sevenpage-container">
-                <div className="left"><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Education</div>
+                <div className="left">
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>8/15</div>
+                    <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Education</div>
                     <div className='Current-location'>
                         <span>Does the applicant meet the education requirements for this visa?</span>
                         <div class="form-check-label" >

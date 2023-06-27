@@ -30,7 +30,9 @@ const EightPage_New = () => {
         <>
         <Header/>
             <div className="eightpage-container">
-                <div className="left"><div style={{ paddingLeft: "10px",fontSize: "20px", fontWeight: "600"}} >Employment</div>
+                <div className="left">
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>9/15</div>
+                    <div style={{ paddingLeft: "10px",fontSize: "20px", fontWeight: "600"}} >Employment</div>
                     <div style={{ paddingLeft: "10px" }}>Usual occupation</div>
                     <div className='parent'>
                         <label className="title">Usual occupation</label>

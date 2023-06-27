@@ -17,7 +17,9 @@ const FifthPage = () => {
         <>
         <Header/>
             <div className="fifth-content">
-                <div className="left"><div className='Current-location' style={{ fontSize: "20px", fontWeight: "600" }}>Contact details</div>
+                <div className="left">
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>6/15</div>
+                    <div className='Current-location' style={{ fontSize: "20px", fontWeight: "600" }}>Contact details</div>
                     <div className='Current-location'>Country of residence</div>
                     <div className='status'>
                         <span className='title-status'>Usual country of residence</span>

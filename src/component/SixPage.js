@@ -10,7 +10,9 @@ const SixPage = () => {
        <>
        <Header/>
             <div className="sixpage-container">
-                <div className="left"><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Authorised recipient</div>
+                <div className="left">
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>7/15</div>
+                    <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Authorised recipient</div>
                     <div style={{ paddingLeft: "10px" }}>Does the applicant authorise another person to receive written correspondence on their behalf?</div>
                     <div style={{ paddingLeft: "10px" }}>This authorises the department to send the authorised person all written correspondence that would otherwise be sent directly to the applicant.</div>
                     <div className="check-radio-answer">

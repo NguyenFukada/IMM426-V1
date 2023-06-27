@@ -8,7 +8,9 @@ const EleventhPage = () => {
         <div>
             <Header/>
             <div className='ele-content'>
-                <div className='left'><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Character declarations</div>
+                <div className='left'>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>12/15</div>
+                    <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Character declarations</div>
                     <div className='Current-location'>If the applicant answers ‘Yes’ to any of the character declarations they must give all relevant details.
                         For combined applications, state which applicant the declaration applies to</div>
                     <div className='Current-location'>If the matter relates to a criminal conviction, provide:</div>

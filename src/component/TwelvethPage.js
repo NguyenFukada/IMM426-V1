@@ -7,7 +7,9 @@ const TwelvethPage = () => {
         <div>
             <Header/>
             <div className='twel-content'>
-                <div className='left'><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Work and Holiday declarations</div>
+                <div className='left'>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>13/15</div>
+                    <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Work and Holiday declarations</div>
                     <div className='Current-location'>Warning:</div>
                     <div className='Current-location'>Giving false or misleading information is a serious offence.</div>
                     <div className='Current-location'>The applicant declares that they:</div>

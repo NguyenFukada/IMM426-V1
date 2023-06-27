@@ -36,7 +36,9 @@ const NinePage = () => {
         <>
             <Header/>
             <div className='nine-content'>
-                <div className='left'><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Language</div>
+                <div className='left'>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>10/15</div>
+                    <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Language</div>
                     <div className='Current-location'>
                         <span>Does the applicant hold a current passport from the USA, UK, Canada, New Zealand, or the republic of Ireland?</span>
                         <div class="form-check-label" >

@@ -7,7 +7,9 @@ const ThreeteenthPage = () => {
         <div>
             <Header />
             <div className='thirdteen-content'>
-                <div className='left'><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Declarations </div>
+                <div className='left'>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>14/15</div>
+                    <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Declarations </div>
                     <div className='Current-location'>Warning:</div>
                     <div className='Current-location'>Giving false or misleading information is a serious offence.</div>
                     <div className='Current-location'>The applicant declares that they:</div>

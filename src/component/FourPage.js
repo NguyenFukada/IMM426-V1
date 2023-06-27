@@ -1,14 +1,48 @@
 import { Form } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom';
 import './FourPage.scss'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import Header from "./Header";
+import _, { cloneDeep } from "lodash"
 const FourPage = () => {
     const navigate = useNavigate();
+
+    const [SaveDataPageFour, setSaveDataPageFour] = useState({
+        QP4: {
+            Yes: false,
+            No: false
+        }
+    })
+    const handleOnChange = (Flag, Question) => {
+        let CloneState = _.cloneDeep(SaveDataPageFour);
+
+        if (Flag === "Yes") {
+            CloneState[Question].Yes = true;
+            CloneState[Question].No = false;
+        } else if (Flag === "No") {
+            CloneState[Question].Yes = false;
+            CloneState[Question].No = true;
+        }
+        setSaveDataPageFour(CloneState)
+    }
+    useEffect(() => {
+        const items = window.localStorage.getItem('SaveDataPageFour');
+        console.log("get local storage: ", items);
+        if (items) {
+            setSaveDataPageFour(JSON.parse(items));
+        }
+    }, [])
+    useEffect(() => {
+        window.localStorage.setItem('SaveDataPageFour', JSON.stringify(SaveDataPageFour))
+    }, [SaveDataPageFour])
+
     return (
         <>
         <Header/>
             <div className="fourth-content">
                 <div className="left"><div className="fourth-page" style={{ fontSize: "20px", fontWeight: "600" }}>Additional identity questions</div>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>5/15</div>
                     <div className="fourth-page">Provide further details below, where available.</div>
                     <div className="fourth-page">Previous travel to Australia</div>
                     <div className="fourth-page">Has this applicant previously travelled to Australia or previously applied for a visa?</div>
@@ -21,12 +55,13 @@ const FourPage = () => {
                                         type={type}
                                         id={`question1-${type}`}
                                         label={"Yes"}
-
+                                        onChange={() => handleOnChange("Yes", "QP4")} checked={SaveDataPageFour.QP4.Yes}
                                     />
                                     <Form.Check
                                         type={type}
                                         id={`question1-${type}`}
                                         label={"No"}
+                                        onChange={() => handleOnChange("No", "QP4")} checked={SaveDataPageFour.QP4.No}
                                     />
                                 </div>
                             ))}

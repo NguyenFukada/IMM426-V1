@@ -13,6 +13,7 @@ const FourteenPage = () => {
         <>
             <Header />
             <div className="fourtee-content">
+                <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>15/15</div>
                 <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Attach documents</div>
                 <div style={{ paddingLeft: "10px" }}>Transaction Reference Number (TRN):EGOY85FCFC</div>
                 <div style={{ paddingLeft: "10px" }}>Attach the documents listed below then click Next to pay for and submit the application.</div>
@@ -50,7 +51,7 @@ const FourteenPage = () => {
                 <Accordion defaultActiveKey="1">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
-                            Evidence of home government support (usually a letter)	
+                            Evidence ...	
                         </Accordion.Header>
                         <Accordion.Body>
                             <div>

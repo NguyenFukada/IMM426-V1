@@ -8,7 +8,9 @@ return(
     <div>
         <Header/>
         <div className='tent-content'>
-            <div className='left'><div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Health declarations</div>
+            <div className='left'>
+                <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>11/15</div>
+                <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Health declarations</div>
                 <div className='Current-location'>
                     <span>In the last five years, has any applicant visited, or lived, outside their
                         country of passport, for more than 3 consecutive months? Do not include time spent in Australia.</span>
