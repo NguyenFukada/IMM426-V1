@@ -8,6 +8,21 @@ import _, { cloneDeep } from "lodash"
 const ThirdPage = (props) => {
     const navigate = useNavigate();
     const account = useSelector(state => state.user.account);
+
+    const FormatDate = (value) => {
+        const today = value;
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1; // Months start at 0!
+        let dd = today.getDate();
+
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+
+        const formattedToday = dd + '/' + mm + '/' + yyyy;
+        return formattedToday;
+    }
+
+
     const handleOnChange = (Flag, Question) => {
         let CloneState = _.cloneDeep(SaveDataPageThree);
 
@@ -28,7 +43,6 @@ const ThirdPage = (props) => {
     })
     useEffect(() => {
         const items = window.localStorage.getItem('SaveDataPageThree');
-        console.log("get local storage: ", items);
         if (items) {
             setSaveDataPageThree(JSON.parse(items));
         }
@@ -36,7 +50,9 @@ const ThirdPage = (props) => {
     useEffect(() => {
         window.localStorage.setItem('SaveDataPageThree', JSON.stringify(SaveDataPageThree))
     }, [SaveDataPageThree])
-     console.log("dajshdashdja: ",SaveDataPageThree.Q1)
+
+    let CloneData = _.cloneDeep(window.localStorage.getItem('SaveDataPageTwo'));
+    CloneData = JSON.parse(CloneData)
     return(
         <>
         <Header/>
@@ -50,37 +66,38 @@ const ThirdPage = (props) => {
 
                     <div style={{display: "flex"}}>
                         <span>Family name:</span>
-                        <span style={{ paddingLeft: "50px" }}>{SaveDataPageThree.familyName ? SaveDataPageThree.familyName : "default"}</span>
+                        <span style={{ paddingLeft: "50px" }}>
+                            {CloneData?.familyName ? CloneData?.familyName : "default"}</span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Given names:</span>
                         <span style={{ paddingLeft: "50px" }}>
-                            {SaveDataPageThree.givenName ? SaveDataPageThree.givenName : "default"}</span>
+                            {CloneData.givenName ? CloneData.givenName : "default"}</span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Sex:</span>
                         <span style={{ paddingLeft: "115px" }}>
-                            Female
-                            {/* {SaveDataPageThree.Q1.Yes === false ? 
+                            {CloneData?.Q1?.Yes === false ? 
                             <span>Male</span> :
-                            <span>Female</span>} */}
+                            <span>Female</span>}
                         </span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Date of birth:</span>
-                        <span style={{ paddingLeft: "50px" }}>{SaveDataPageThree.dateOfBirth ? SaveDataPageThree.dateOfBirth : "default"}</span>
+                        <span style={{ paddingLeft: "50px" }}>{CloneData?.dateOfBirth ? 
+                            CloneData.dateOfBirth.substring(0, 10) : "default"}</span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Country of birth:</span>
-                        <span style={{ paddingLeft: "30px" }}>{account?.CountryOfPassport.label ? account.CountryOfPassport.label : "default"}</span>
+                        <span style={{ paddingLeft: "30px" }}>{CloneData?.CountryofPassport.label ? CloneData.CountryofPassport.label : "default"}</span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Passport number:</span>
-                        <span style={{ paddingLeft: "20px" }}>{SaveDataPageThree.passportNumber ? SaveDataPageThree.passportNumber : "default"}</span>
+                        <span style={{ paddingLeft: "20px" }}>{CloneData.passportNumber ? CloneData.passportNumber : "default"}</span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Country of passport:</span>
-                        <span style={{ paddingLeft: "30px" }}>{account?.CountryOfPassport.label ? account.CountryOfPassport.label : "default"}</span>
+                        <span style={{ paddingLeft: "30px" }}>{CloneData?.CountryofPassport.label ? CloneData.CountryofPassport.label : "default"}</span>
                     </div>
                     <div >Is the above information corrected?</div>
                     <div class="form-check-label" >

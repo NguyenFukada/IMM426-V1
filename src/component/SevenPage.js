@@ -3,10 +3,43 @@ import './SevenPage.scss'
 import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 import { useSelector } from "react-redux";
-
+import _, { cloneDeep } from "lodash"
+import { useEffect,useState } from "react";
 const SevenPage = () => {
     const account = useSelector(state => state.user.account);
     const navigate = useNavigate();
+
+    const data = {
+        Q1: {
+            Yes: false,
+            No: false
+        },
+    }
+    const [SaveDataPageSeven, setSaveDataPageSeven] = useState(data)
+
+    const handleOnChange = (Flag, Question) => {
+        let CloneState = _.cloneDeep(SaveDataPageSeven);
+
+        if (Flag === "Yes") {
+            CloneState[Question].Yes = true;
+            CloneState[Question].No = false;
+        } else if (Flag === "No") {
+            CloneState[Question].Yes = false;
+            CloneState[Question].No = true;
+        }
+        setSaveDataPageSeven(CloneState)
+    }
+
+    useEffect(() => {
+        const items = window.localStorage.getItem('SaveDataPageSeven');
+        if (items) {
+            setSaveDataPageSeven(JSON.parse(items));
+        }
+    }, [])
+    useEffect(() => {
+        window.localStorage.setItem('SaveDataPageSeven', JSON.stringify(SaveDataPageSeven))
+    }, [SaveDataPageSeven])
+
     return (
         <>
         <Header/>
@@ -19,13 +52,15 @@ const SevenPage = () => {
                         <div class="form-check-label" >
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" 
+                                    onChange={() => handleOnChange("Yes", "Q1")} checked={SaveDataPageSeven.Q1.Yes}/>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
+                                    onChange={() => handleOnChange("No", "Q1")} checked={SaveDataPageSeven.Q1.No}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>

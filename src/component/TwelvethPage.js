@@ -1,7 +1,63 @@
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
+import { useState, useEffect } from "react"
 import './TwelvethPage.scss'
+import _, { cloneDeep } from "lodash"
 const TwelvethPage = () => {
+
+    const data = {
+        Q1: {
+            Yes: false,
+            No: false
+        },
+        Q2: {
+            Yes: false,
+            No: false
+        },
+        Q3: {
+            Yes: false,
+            No: false,
+        },
+        Q4: {
+            Yes: false,
+            No: false
+        },
+        Q5: {
+            Yes: false,
+            No: false
+        },
+        
+
+
+    }
+    const [SaveDataPageTwel, setSaveDataPageTwel] = useState(data)
+
+    const handleOnChange = (Flag, Question) => {
+        let CloneState = _.cloneDeep(SaveDataPageTwel);
+
+        if (Flag === "Yes") {
+            CloneState[Question].Yes = true;
+            CloneState[Question].No = false;
+        } else if (Flag === "No") {
+            CloneState[Question].Yes = false;
+            CloneState[Question].No = true;
+        }
+        setSaveDataPageTwel(CloneState)
+    }
+
+
+
+    useEffect(() => {
+        const items = window.localStorage.getItem('SaveDataPageTwel');
+        if (items) {
+            setSaveDataPageTwel(JSON.parse(items));
+        }
+    }, [])
+    useEffect(() => {
+        window.localStorage.setItem('SaveDataPageTwel', JSON.stringify(SaveDataPageTwel))
+    }, [SaveDataPageTwel])
+
+    console.log("check data 123: ",SaveDataPageTwel);
     const navigate = useNavigate();
     return (
         <div>
@@ -18,13 +74,15 @@ const TwelvethPage = () => {
                         <div class="form-check-label" style={{ width: "50%" }}>
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" 
+                                    onChange={() => handleOnChange("Yes", "Q1")} checked={SaveDataPageTwel?.Q1?.Yes}/>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
+                                    onChange={() => handleOnChange("No", "Q1")} checked={SaveDataPageTwel?.Q1?.No}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>
@@ -37,13 +95,15 @@ const TwelvethPage = () => {
                         <div class="form-check-label" style={{ width: "50%" }}>
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" 
+                                    onChange={() => handleOnChange("Yes", "Q2")} checked={SaveDataPageTwel?.Q2?.Yes}/>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" 
+                                    onChange={() => handleOnChange("No", "Q2")} checked={SaveDataPageTwel?.Q2?.No}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>
@@ -56,13 +116,15 @@ const TwelvethPage = () => {
                         <div class="form-check-label" style={{ width: "50%" }}>
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1" 
+                                    onChange={() => handleOnChange("Yes", "Q3")} checked={SaveDataPageTwel?.Q3?.Yes}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" 
+                                    onChange={() => handleOnChange("No", "Q3")} checked={SaveDataPageTwel?.Q3?.No}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>
@@ -75,13 +137,15 @@ const TwelvethPage = () => {
                         <div class="form-check-label" style={{ width: "50%" }}>
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1" 
+                                    onChange={() => handleOnChange("Yes", "Q4")} checked={SaveDataPageTwel?.Q4?.Yes}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2" 
+                                    onChange={() => handleOnChange("No", "Q4")} checked={SaveDataPageTwel?.Q4?.No}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>
@@ -94,13 +158,15 @@ const TwelvethPage = () => {
                         <div class="form-check-label" style={{ width: "50%" }}>
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault1" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault1" 
+                                    onChange={() => handleOnChange("Yes", "Q5")} checked={SaveDataPageTwel?.Q5?.Yes}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2" />
+                                <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2" 
+                                    onChange={() => handleOnChange("No", "Q5")} checked={SaveDataPageTwel?.Q5?.No}/>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>

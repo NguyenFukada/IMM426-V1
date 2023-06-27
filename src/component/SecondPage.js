@@ -121,10 +121,8 @@ const SecondPage = () => {
     }
 
     const ChangeNation = (value, Id) => {
-        console.log("Country: ", value);
         let CloneState = _.cloneDeep(SaveDataPageTwo);
         CloneState[Id] = value;
-        console.log("CloneState: ", CloneState.currentLocation);
         setSaveDataPageTwo(CloneState)
     }
 
@@ -138,13 +136,11 @@ const SecondPage = () => {
     const HandleChangeInputText = (value, Title) => {
         let CloneState = _.cloneDeep(SaveDataPageTwo);
         CloneState[Title] = value;
-        console.log("familyname: ", CloneState[Title]);
         setSaveDataPageTwo(CloneState)
     }
 
     useEffect(() => {
         const items = window.localStorage.getItem('SaveDataPageTwo');
-        console.log("get local storage: ", items);
         if (items) {
             setSaveDataPageTwo(JSON.parse(items));
         }

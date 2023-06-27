@@ -68,7 +68,6 @@ const DetailStudy = () => {
             type: 'FETCH_DEGREE',
             payload: {
                 Qualification, Institution, Course, startDate_Clone, startDateTo_Clone,
-                
             }
         })
         navigate('/sevenpage')

@@ -65,7 +65,6 @@ const FirstPage = (props) => {
             CloneState[Question].No = true;
         }
         if (Question === "QM"){
-            console.log("Check QM")
             CloneState.QM.Ans1 = false;
             CloneState.QM.Ans2 = false;
             CloneState.QM.Ans3 = false;
@@ -75,10 +74,9 @@ const FirstPage = (props) => {
     }
 
     const ChangeNation = (value,Id) => {
-        console.log("Country: ", value);
+       
         let CloneState = _.cloneDeep(SaveDataPageOne);
         CloneState[Id] = value;
-        console.log("CloneState: ", CloneState.currentLocation);
         setSaveDataPageOne(CloneState)    
     }
 
@@ -91,7 +89,7 @@ const FirstPage = (props) => {
 
     useEffect(() => {
         const items = window.localStorage.getItem('SaveDataPageOne');
-        console.log("get local storage: ",items);
+    
         if (items){
             setSaveDataPageOne(JSON.parse(items));
         }
@@ -100,8 +98,6 @@ const FirstPage = (props) => {
         window.localStorage.setItem('SaveDataPageOne', JSON.stringify(SaveDataPageOne))
     }, [SaveDataPageOne])
     
-    
-    console.log("Startdate: ", startDate);
     return (
         <>
         <Header/>

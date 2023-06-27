@@ -3,6 +3,8 @@ import Select from 'react-select'
 import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 import './EightPage.scss'
+import _, { cloneDeep } from "lodash"
+import { useEffect,useState } from "react";
 const EightPage_New = () => {
     const navigate = useNavigate();
     const options = [
@@ -26,6 +28,36 @@ const EightPage_New = () => {
         { value: 'Transport, Postal and Warehousing', label: 'Transport, Postal and Warehousing' },
         { value: 'Wholesale Trade', label: 'Wholesale Trade' },
     ]
+
+    const data = {
+        Occupation: "",
+        IndustryType: "",
+    }
+    const [SaveDataPageEight, setSaveDataPageEight] = useState(data)
+    const ChangeNation = (value, Id) => {
+
+        let CloneState = _.cloneDeep(SaveDataPageEight);
+        CloneState[Id] = value;
+        setSaveDataPageEight(CloneState)
+    }
+
+    const HandleChangeInputText = (value, Title) => {
+        let CloneState = _.cloneDeep(SaveDataPageEight);
+        CloneState[Title] = value;
+        setSaveDataPageEight(CloneState)
+    }
+
+    useEffect(() => {
+        const items = window.localStorage.getItem('SaveDataPageEight');
+        if (items) {
+            setSaveDataPageEight(JSON.parse(items));
+        }
+    }, [])
+    useEffect(() => {
+        window.localStorage.setItem('SaveDataPageEight', JSON.stringify(SaveDataPageEight))
+    }, [SaveDataPageEight])
+
+
     return (
         <>
         <Header/>
@@ -36,12 +68,16 @@ const EightPage_New = () => {
                     <div style={{ paddingLeft: "10px" }}>Usual occupation</div>
                     <div className='parent'>
                         <label className="title">Usual occupation</label>
-                        <span className="inputform"><input className='form-control col-6'></input></span>
+                        <span className="inputform"><input className='form-control col-6'
+                            value={SaveDataPageEight.Occupation}
+                            onChange={(Event) => HandleChangeInputText(Event.target.value, "Occupation")}></input></span>
                     </div>
                     <div style={{ paddingLeft: "10px" }}>Intended employment</div>
                     <div className='status'>
                         <span className='title-status'>Industry type</span>
-                        <Select options={options} className="select" />
+                        <Select options={options} className="select" 
+                            value={SaveDataPageEight.IndustryType}
+                            onChange={(Event) => ChangeNation(Event, "IndustryType")}/>
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
                         <button onClick={() => navigate('/sevenpage')} style={{ marginLeft: "10px" }} >Previous</button>

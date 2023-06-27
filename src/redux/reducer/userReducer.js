@@ -19,7 +19,6 @@ const INITSTATE = {
 const userReducer = (state = INITSTATE, action) => {
     switch (action.type) {
         case 'FETCH_SAVE_USER':
-            console.log("check action: ", action);
             return {
                 ...state, account: {
                     familyName: action.payload.familyName,

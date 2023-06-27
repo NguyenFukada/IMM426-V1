@@ -3,8 +3,48 @@ import "react-datepicker/dist/react-datepicker.css";
 import './SixPage.scss'
 import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
-
+import _, { cloneDeep } from "lodash"
+import { useEffect,useState } from "react";
 const SixPage = () => {
+
+    const data = {
+        QM: {
+            Ans1: false,
+            Ans2: false,
+            Ans3: false,
+            Ans4: false,
+        },
+        Email: "",
+    }
+    const [SaveDataPageSix, setSaveDataPageSix] = useState(data)
+    const handleOnChange = (Flag, Question) => {
+        let CloneState = _.cloneDeep(SaveDataPageSix);
+        if (Question === "QM") {
+            CloneState.QM.Ans1 = false;
+            CloneState.QM.Ans2 = false;
+            CloneState.QM.Ans3 = false;
+            CloneState.QM.Ans4 = false;
+            CloneState[Question][Flag] = true;
+        }
+        setSaveDataPageSix(CloneState)
+    }
+    const HandleChangeInputText = (value, Title) => {
+        let CloneState = _.cloneDeep(SaveDataPageSix);
+        CloneState[Title] = value;
+    
+        setSaveDataPageSix(CloneState)
+    }
+
+    useEffect(() => {
+        const items = window.localStorage.getItem('SaveDataPageSix');
+        if (items) {
+            setSaveDataPageSix(JSON.parse(items));
+        }
+    }, [])
+    useEffect(() => {
+        window.localStorage.setItem('SaveDataPageSix', JSON.stringify(SaveDataPageSix))
+    }, [SaveDataPageSix])
+
     const navigate = useNavigate();
     return (
        <>
@@ -17,26 +57,34 @@ const SixPage = () => {
                     <div style={{ paddingLeft: "10px" }}>This authorises the department to send the authorised person all written correspondence that would otherwise be sent directly to the applicant.</div>
                     <div className="check-radio-answer">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2" />
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2" 
+                                checked={SaveDataPageSix.QM.Ans1}
+                                onChange={() => handleOnChange("Ans1", "QM")} />
                             <label class="form-check-label" for="flexRadioDefault2">
                                 No
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2" />
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2_1" 
+                                checked={SaveDataPageSix.QM.Ans2}
+                                onChange={() => handleOnChange("Ans2", "QM")} />
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Yes, a registered migration agent
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2" />
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2_2" 
+                                checked={SaveDataPageSix.QM.Ans3}
+                                onChange={() => handleOnChange("Ans3", "QM")}/>
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Yes, a legal practitioner
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2" />
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2_3" 
+                                checked={SaveDataPageSix.QM.Ans4}
+                                onChange={() => handleOnChange("Ans4", "QM")}/>
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Yes, another person
                             </label>
@@ -48,7 +96,9 @@ const SixPage = () => {
                     <div style={{ paddingLeft: "10px" }}>All correspondence, including notification of the outcome of the application will be sent to:</div>
                     <div className='parent'>
                         <label className="title">Email address</label>
-                        <span className="inputform"><input className='form-control col-6'></input></span>
+                        <span className="inputform"><input className='form-control col-6'
+                            value={SaveDataPageSix.Email}
+                            onChange={(Event) => HandleChangeInputText(Event.target.value, "Email")}></input></span>
                     </div>
                     <div style={{ paddingLeft: "10px" }}>Note: The holder of this email address may receive a verification email from the Department if the address has not already been verified. If the address holder receives a verification email, they should click on the link to verify their address before this application is submitted.</div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
