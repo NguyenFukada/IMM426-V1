@@ -1,0 +1,153 @@
+.homepage-container {
+    display: flex;
+
+    .f1 {
+      width: 8%;
+    }
+
+    .f2 {
+      width: 8%;
+    }
+
+    .homepage-content {
+      padding       : 120px;
+      width         : 45%;
+      position      : relative;
+      display       : flex;
+      flex-direction: column;
+      gap           : 30px;
+
+
+      .title-1 {
+        font-size  : 46px;
+        font-weight: 600;
+      }
+
+      .title-2 {
+        font-size: 25px;
+      }
+
+      .title-3 {
+        
+
+        .editzalo {
+               .btn:hover {
+          color          : #a348f3 !important;
+          text-decoration: none !important;
+          border: none !important;
+          border-color   : white !important;
+        }
+        .btn:focus {
+            border-color: white !important
+          }
+          background   : white;
+          display      : flex;
+          align-items  : center;
+          margin-top   : 10px;
+          border       : 1px solid blue;
+          width        : 43vh;
+          border-radius: 10px;
+          height       : -moz-fit-content;
+          height       : fit-content;
+
+          .btn {
+            color       : #8686e1;
+            font-size   : 28px;
+            padding     : 10px;
+            padding-left: 30px;
+          }
+
+          .zalo {
+            height      : 51px;
+            position    : inherit;
+            padding-left: 50px;
+          }
+        }
+
+        .editfacebook {
+            .btn:hover {
+          color          : #a348f3 !important;
+          text-decoration: none !important;
+          border: none !important;
+          border-color   : white !important;
+        }
+        .btn:focus {
+            border-color: white !important
+          }
+          cursor       : pointer;
+          background   : white;
+          display      : flex;
+          align-items  : center;
+          margin-top   : 10px;
+          border       : 1px solid blue;
+          width        : 43vh;
+          border-radius: 10px;
+          height       : -moz-fit-content;
+          height       : fit-content;
+
+          .btn {
+            color       : #8686e1;
+            font-size   : 28px;
+            padding     : 10px;
+            padding-left: 30px;
+            
+          }
+
+          .facebook {
+            height      : 51px;
+            position    : inherit;
+            padding-left: 63px;
+          }
+        }
+
+        .edit-demo {
+          .btn:hover {
+          color          : #a348f3 !important;
+          text-decoration: none;
+          border-color   : #770079 !important;
+        }
+          border-color: white;
+          margin-top      : 175px;
+          margin-right    : 40px;
+          border          : 1px solid red;
+          border-radius   : 8px;
+          align-items     : center;
+          justify-content : center;
+          display         : flex;
+          background-color: #770079;
+
+          .btn {
+            color          : #d3cece;
+            font-size      : 28px;
+            padding        : 10px;
+            padding-left   : 30px;
+            align-items    : center;
+            justify-content: center;
+            display        : flex;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+
+    .content-right {
+      width: 50%;
+
+      .up-img {
+        height       : 300px;
+        border       : 1px solid #cccc;
+        border-radius: 5px;
+        border       : none;
+        margin-top   : 125px;
+        margin-right : 10px;
+      }
+
+      .down-img {
+        height: 349px;
+      }
+    }
+  }
+.head{
+    background: white;
+    height: 55px;
+}

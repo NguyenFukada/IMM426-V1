@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes,Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import App from './App';
 import SecondPage from './component/SecondPage';
 import NationCard from './component/FormNationCard';
@@ -20,14 +20,16 @@ import FirstPage from './component/FirstPage';
 import FourteenPage from './component/FourteenPage';
 import SubmitPage from './component/SubmitPage';
 import _, { cloneDeep } from "lodash"
+import PopUp from './component/PopUp';
 const Notfound = () => {
     return (
         <div className='container mt-3 d-flex justify-content-center alert alert-danger '>404.Not found data with your current URL</div>
     )
 }
 const Layout = () => {
-    return(
+    return (
         <Routes>
+            <Route path='/popup' element={<PopUp />}></Route>
             <Route path="/demo" element={<App />}></Route>
             <Route path="/firstpage" element={<FirstPage />}></Route>
             <Route path="/secondpage" element={<SecondPage />}></Route>
@@ -48,8 +50,9 @@ const Layout = () => {
             <Route path="/submitpage" element={<SubmitPage />}></Route>
             <Route
                 path="/"
-                element={<Navigate to="/demo/" replace />}
+                element={<Navigate to="/popup/" replace />}
             />
+            <Route path='*' element={<Notfound />} />
         </Routes>
     )
 }

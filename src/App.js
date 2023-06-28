@@ -1,7 +1,6 @@
 import Header from "./component/Header";
 import './App.scss'
 import { useNavigate } from 'react-router-dom';
-import FirstPage from "./component/FirstPage";
 import Notice from "./component/Notice";
 const App = (props) => {
     const navigate = useNavigate();
@@ -11,7 +10,6 @@ const App = (props) => {
                     <Header />
                 </div>
                 <Notice />
-            
             </div>
     )
 }
