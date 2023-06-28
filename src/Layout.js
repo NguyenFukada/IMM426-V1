@@ -29,8 +29,8 @@ const Notfound = () => {
 const Layout = () => {
     return (
         <Routes>
-            <Route path='/popup' element={<PopUp />}></Route>
-            <Route path="/demo" element={<App />}></Route>
+            <Route path='/demo' element={<PopUp />}></Route>
+            <Route path="/demopage" element={<App />}></Route>
             <Route path="/firstpage" element={<FirstPage />}></Route>
             <Route path="/secondpage" element={<SecondPage />}></Route>
             <Route path="/national-identity-card" element={<NationCard />}></Route>
@@ -50,7 +50,7 @@ const Layout = () => {
             <Route path="/submitpage" element={<SubmitPage />}></Route>
             <Route
                 path="/"
-                element={<Navigate to="/popup/" replace />}
+                element={<Navigate to="/demo" replace />}
             />
             <Route path='*' element={<Notfound />} />
         </Routes>

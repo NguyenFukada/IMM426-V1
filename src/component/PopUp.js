@@ -33,7 +33,7 @@ const PopUp = (props) => {
                             </div>
                             <div className='edit-demo'>
                                 <button className='btn'
-                                    onClick={() => navigate('/demo')}>
+                                    onClick={() => navigate('/demopage')}>
                                     ĐI ĐẾN TRANG DEMO
                                 </button>
                             </div>
