@@ -15,7 +15,7 @@ const FourteenPage = () => {
             <div className="fourtee-content">
                 <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>15/15</div>
                 <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Attach documents</div>
-                <div style={{ paddingLeft: "10px" }}>Transaction Reference Number (TRN):EGOY85FCFC</div>
+                <div style={{ paddingLeft: "10px" }}>Transaction Reference Number (TRN): </div>
                 <div style={{ paddingLeft: "10px" }}>Attach the documents listed below then click Next to pay for and submit the application.</div>
                 <div style={{ paddingLeft: "10px" }}>If you choose to submit the application without attaching all required documents, you will need to provide a reason.</div>
                 <div style={{ paddingLeft: "10px" }}>Applications submitted without all the required documents may take longer to process.</div>
