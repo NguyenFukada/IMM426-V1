@@ -29,7 +29,7 @@ const Notfound = () => {
 const Layout = () => {
     return (
         <Routes>
-            <Route path='/demo' element={<PopUp />}></Route>
+            <Route path='/426demo' element={<PopUp />}></Route>
             <Route path="/demopage" element={<App />}></Route>
             <Route path="/firstpage" element={<FirstPage />}></Route>
             <Route path="/secondpage" element={<SecondPage />}></Route>
@@ -50,7 +50,7 @@ const Layout = () => {
             <Route path="/submitpage" element={<SubmitPage />}></Route>
             <Route
                 path="/"
-                element={<Navigate to="/demo" replace />}
+                element={<Navigate to="/426demo" replace />}
             />
             <Route path='*' element={<Notfound />} />
         </Routes>
