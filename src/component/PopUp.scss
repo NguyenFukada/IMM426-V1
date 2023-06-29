@@ -45,7 +45,7 @@
           align-items  : center;
           margin-top   : 10px;
           border       : 1px solid blue;
-          width        : 43vh;
+          width        : fit-content;
           border-radius: 10px;
           height       : -moz-fit-content;
           height       : fit-content;
@@ -61,6 +61,7 @@
             height      : 51px;
             position    : inherit;
             padding-left: 50px;
+            padding-right: 15px;
           }
         }
 
@@ -80,7 +81,7 @@
           align-items  : center;
           margin-top   : 10px;
           border       : 1px solid blue;
-          width        : 43vh;
+          width        : fit-content;
           border-radius: 10px;
           height       : -moz-fit-content;
           height       : fit-content;
@@ -97,6 +98,7 @@
             height      : 51px;
             position    : inherit;
             padding-left: 63px;
+            padding-right: 15px;
           }
         }
 
