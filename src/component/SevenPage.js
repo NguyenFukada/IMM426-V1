@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 import { useSelector } from "react-redux";
 import _, { cloneDeep } from "lodash"
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 const SevenPage = () => {
     const account = useSelector(state => state.user.account);
     const navigate = useNavigate();
@@ -42,25 +42,25 @@ const SevenPage = () => {
 
     return (
         <>
-        <Header/>
+            <Header />
             <div className="sevenpage-container">
                 <div className="left">
-                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>8/15</div>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>9/16</div>
                     <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Education</div>
                     <div className='Current-location'>
                         <span>Does the applicant meet the education requirements for this visa?</span>
                         <div class="form-check-label" >
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" 
-                                    onChange={() => handleOnChange("Yes", "Q1")} checked={SaveDataPageSeven.Q1.Yes}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                    onChange={() => handleOnChange("Yes", "Q1")} checked={SaveDataPageSeven.Q1.Yes} />
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
-                                    onChange={() => handleOnChange("No", "Q1")} checked={SaveDataPageSeven.Q1.No}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                    onChange={() => handleOnChange("No", "Q1")} checked={SaveDataPageSeven.Q1.No} />
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>
@@ -89,9 +89,9 @@ const SevenPage = () => {
                     <button onClick={() => navigate('/detail-studies')}>Add</button>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
                         <button onClick={() => navigate('/sixthpage')} style={{ marginLeft: "10px" }}>Previous</button>
-                        <div><button onClick={() => navigate('/eightpage')} style={{ marginLeft: "60em" }}>Next</button></div></div>
+                        <button onClick={() => navigate('/eightpage')} style={{ marginLeft: "auto", marginRight: "auto" }}>Next</button></div>
                 </div>
-                    
+
                 <div className="right">
                     <div className="up-content">
                         <div className="title-right">Related Links</div>

@@ -21,6 +21,9 @@ import FourteenPage from './component/FourteenPage';
 import SubmitPage from './component/SubmitPage';
 import _, { cloneDeep } from "lodash"
 import PopUp from './component/PopUp';
+import SignNaturePage from './component/SignNaturePage';
+import Payment from './component/Payment';
+import Preview from './component/Preview';
 const Notfound = () => {
     return (
         <div className='container mt-3 d-flex justify-content-center alert alert-danger '>404.Not found data with your current URL</div>
@@ -32,6 +35,7 @@ const Layout = () => {
             <Route path='/demo' element={<PopUp />}></Route>
             <Route path='/462demo' element={<PopUp />}></Route>
             <Route path="/demopage" element={<App />}></Route>
+            <Route path="/signaturepage" element={<SignNaturePage />}></Route>
             <Route path="/firstpage" element={<FirstPage />}></Route>
             <Route path="/secondpage" element={<SecondPage />}></Route>
             <Route path="/national-identity-card" element={<NationCard />}></Route>
@@ -48,7 +52,9 @@ const Layout = () => {
             <Route path="/twelvethpage" element={<TwelvethPage />}></Route>
             <Route path="/threeteenthpage" element={<ThreeteenthPage />}></Route>
             <Route path="/fourteenpage" element={<FourteenPage />}></Route>
+            <Route path="/review-page" element={<Preview />}></Route>
             <Route path="/submitpage" element={<SubmitPage />}></Route>
+            <Route path="/payment" element={<Payment />}></Route>
             <Route
                 path="/"
                 element={<Navigate to="/462demo" replace />}

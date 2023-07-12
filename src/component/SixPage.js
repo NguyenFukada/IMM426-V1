@@ -4,7 +4,7 @@ import './SixPage.scss'
 import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 import _, { cloneDeep } from "lodash"
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 const SixPage = () => {
 
     const data = {
@@ -31,7 +31,7 @@ const SixPage = () => {
     const HandleChangeInputText = (value, Title) => {
         let CloneState = _.cloneDeep(SaveDataPageSix);
         CloneState[Title] = value;
-    
+
         setSaveDataPageSix(CloneState)
     }
 
@@ -47,17 +47,17 @@ const SixPage = () => {
 
     const navigate = useNavigate();
     return (
-       <>
-       <Header/>
+        <>
+            <Header />
             <div className="sixpage-container">
                 <div className="left">
-                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>7/15</div>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>7/16</div>
                     <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Authorised recipient</div>
                     <div style={{ paddingLeft: "10px" }}>Does the applicant authorise another person to receive written correspondence on their behalf?</div>
                     <div style={{ paddingLeft: "10px" }}>This authorises the department to send the authorised person all written correspondence that would otherwise be sent directly to the applicant.</div>
                     <div className="check-radio-answer">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2" 
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2"
                                 checked={SaveDataPageSix.QM.Ans1}
                                 onChange={() => handleOnChange("Ans1", "QM")} />
                             <label class="form-check-label" for="flexRadioDefault2">
@@ -65,7 +65,7 @@ const SixPage = () => {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2_1" 
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2_1"
                                 checked={SaveDataPageSix.QM.Ans2}
                                 onChange={() => handleOnChange("Ans2", "QM")} />
                             <label class="form-check-label" for="flexRadioDefault2">
@@ -74,17 +74,17 @@ const SixPage = () => {
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2_2" 
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2_2"
                                 checked={SaveDataPageSix.QM.Ans3}
-                                onChange={() => handleOnChange("Ans3", "QM")}/>
+                                onChange={() => handleOnChange("Ans3", "QM")} />
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Yes, a legal practitioner
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault2_3" 
+                            <input class="form-check-input" type="radio" name="flexRadioDefault2_3"
                                 checked={SaveDataPageSix.QM.Ans4}
-                                onChange={() => handleOnChange("Ans4", "QM")}/>
+                                onChange={() => handleOnChange("Ans4", "QM")} />
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Yes, another person
                             </label>
@@ -103,9 +103,9 @@ const SixPage = () => {
                     <div style={{ paddingLeft: "10px" }}>Note: The holder of this email address may receive a verification email from the Department if the address has not already been verified. If the address holder receives a verification email, they should click on the link to verify their address before this application is submitted.</div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
                         <button onClick={() => navigate('/fifthpage')} style={{ marginLeft: "10px" }}>Previous</button>
-                        <button onClick={() => navigate('/sevenpage')} style={{ marginLeft: "60em" }}>Next</button></div>
-                    </div>
-                    
+                        <button onClick={() => navigate('/sevenpage')} style={{ marginLeft: "auto", marginRight: "auto" }}>Next</button></div>
+                </div>
+
                 <div className="right">
                     <div className="up-content">
                         <div className="title-right">Related Links</div>
@@ -128,7 +128,7 @@ const SixPage = () => {
                     </div>
                 </div>
             </div>
-       </>
+        </>
     )
 }
 export default SixPage;

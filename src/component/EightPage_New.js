@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 import './EightPage.scss'
 import _, { cloneDeep } from "lodash"
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 const EightPage_New = () => {
     const navigate = useNavigate();
     const options = [
@@ -60,11 +60,11 @@ const EightPage_New = () => {
 
     return (
         <>
-        <Header/>
+            <Header />
             <div className="eightpage-container">
                 <div className="left">
-                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>9/15</div>
-                    <div style={{ paddingLeft: "10px",fontSize: "20px", fontWeight: "600"}} >Employment</div>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>10/16</div>
+                    <div style={{ paddingLeft: "10px", fontSize: "20px", fontWeight: "600" }} >Employment</div>
                     <div style={{ paddingLeft: "10px" }}>Usual occupation</div>
                     <div className='parent'>
                         <label className="title">Usual occupation</label>
@@ -75,15 +75,15 @@ const EightPage_New = () => {
                     <div style={{ paddingLeft: "10px" }}>Intended employment</div>
                     <div className='status'>
                         <span className='title-status'>Industry type</span>
-                        <Select options={options} className="select" 
+                        <Select options={options} className="select"
                             value={SaveDataPageEight.IndustryType}
-                            onChange={(Event) => ChangeNation(Event, "IndustryType")}/>
+                            onChange={(Event) => ChangeNation(Event, "IndustryType")} />
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
                         <button onClick={() => navigate('/sevenpage')} style={{ marginLeft: "10px" }} >Previous</button>
-                        <button onClick={() => navigate('/ninethpage')} style={{ marginLeft: "60em" }}>Next</button></div>
-                    </div>
-                    
+                        <button onClick={() => navigate('/ninethpage')} style={{ marginLeft: "auto", marginRight: "auto" }}>Next</button></div>
+                </div>
+
                 <div className="right">
                     <div className="up-content">
                         <div className="title-right">Related Links</div>

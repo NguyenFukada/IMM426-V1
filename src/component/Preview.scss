@@ -1,0 +1,103 @@
+.content-preview{
+    .flow{
+        padding-left: 10px;
+    }
+    .flow2{
+        padding-left: 10px;
+        font-weight: 600; 
+        color:rgb(110, 110, 233)
+    }
+    display: flex;
+    .left{
+        width: 70%;
+        .status{
+            align-items: center;
+        }
+        .secondpage-container{
+            .parent{
+                align-items: center;
+                .title{
+                    padding-top: 0px;
+                }
+            }
+            .form-check-label{
+                .check-radio{
+                    padding-left: 10px;
+                    
+                }
+            }
+            .DatePicker{
+                .child-date{
+                    padding-left: 53px;
+                }
+            }
+        }
+        .fourthpage-container{
+             .form-check-label{
+                .check-radio{
+                    padding-left: 10px;
+                    
+                }
+            }
+            .DatePicker{
+                .child-date{
+                    padding-left: 53px;
+                }
+            }
+        }
+    }
+    .right {
+        background-color: #bebfc7;
+        width           : 30%;
+
+        .up-content {
+            padding-left    : 10px;
+            background-color: white;
+            background-clip : content-box;
+            border          : 1px solid #ccc;
+            padding-bottom  : 10px;
+
+            .title-right {
+                font-size   : 20px;
+                color       : white;
+                background  : #072243;
+                padding-left: 20px;
+                font-weight : 600;
+            }
+
+            .content-right {
+                padding-left: 20px;
+                font-size   : 20px;
+            }
+        }
+
+        .down-content {
+            padding-left    : 10px;
+            background-color: white;
+            background-clip : content-box;
+            border          : 1px solid #ccc;
+            padding-bottom  : 10px;
+
+            .title-right {
+                font-size   : 20px;
+                color       : white;
+                background  : #072243;
+                padding-left: 20px;
+                font-weight : 600;
+            }
+
+            .content-right {
+                padding-left: 20px;
+                font-size   : 20px;
+            }
+        }
+
+    }
+}
+.Review-title{
+    font-size: 25px;
+    font-weight: 600;
+    padding-left: 10px;
+    color: rgb(122, 122, 234);
+}
+

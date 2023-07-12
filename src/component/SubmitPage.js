@@ -13,7 +13,8 @@ const SubmitPage = () => {
                     <div>This application is now ready to submit. You can submit it now or return to your account and submit it at a later date.</div>
                     <div>Your application will not be processed until after it is submitted.</div>
                     <button onClick={() => navigate('/fourteenpage')} style={{ marginLeft: "10px" }}>Previous</button>
-                    <button style={{marginLeft:"30em", marginTop: "10px"}}>Submit Now</button>
+                    <button style={{marginLeft:"30em", marginTop: "10px"}}
+                        onClick={() => navigate('/payment')}>Submit Now</button>
                 </div>
                 <div className="right">
                     <div className="up-content">

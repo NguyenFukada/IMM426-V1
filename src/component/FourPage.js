@@ -39,10 +39,10 @@ const FourPage = () => {
 
     return (
         <>
-        <Header/>
+            <Header />
             <div className="fourth-content">
                 <div className="left"><div className="fourth-page" style={{ fontSize: "20px", fontWeight: "600" }}>Additional identity questions</div>
-                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>5/15</div>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>5/16</div>
                     <div className="fourth-page">Provide further details below, where available.</div>
                     <div className="fourth-page">Previous travel to Australia</div>
                     <div className="fourth-page">Has this applicant previously travelled to Australia or previously applied for a visa?</div>
@@ -69,10 +69,10 @@ const FourPage = () => {
                     </div>
                     <div style={{ display: "flex", paddingBottom: "10px" }}>
                         <button onClick={() => navigate('/thirdpage')} style={{ marginLeft: "10px" }}>Previous</button>
-                        <button onClick={() => navigate('/fifthpage')} style={{ marginLeft: "60em" }}>Next</button>
+                        <button onClick={() => navigate('/fifthpage')} style={{ marginLeft: "auto", marginRight: "auto" }}>Next</button>
 
                     </div>
-                    </div>
+                </div>
                 <div className="right">
                     <div className="up-content">
                         <div className="title-right">Related Links</div>
@@ -93,7 +93,7 @@ const FourPage = () => {
                             <div>Translation services</div>
                         </div>
                     </div>
-                </div>                 
+                </div>
             </div>
         </>
     )

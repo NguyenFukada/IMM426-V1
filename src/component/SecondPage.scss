@@ -7,7 +7,7 @@
         display: flex;
 
         .title-status {
-            width  : 30%;
+            width  : 30.4%;
             padding: 10px 10px;
         }
 
@@ -17,7 +17,9 @@
         }
 
     }
-
+    .title-secondpage{
+        width: 30%;
+    }
     .Current-location {
         padding-left: 10px;
 
@@ -101,7 +103,6 @@
         padding-left: 10px;
 
         .child-date {
-            padding-left  : 19em;
             padding-bottom: 5px;
         }
     }
@@ -120,7 +121,7 @@
     }
 }}
     
-.right {
+    .right {
             background-color: #bebfc7;
             width : 30%;
             .up-content{

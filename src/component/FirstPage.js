@@ -9,7 +9,7 @@ import './FirstPage.scss'
 import Header from "./Header";
 import _, { cloneDeep } from "lodash"
 const FirstPage = (props) => {
-    
+
     const navigate = useNavigate();
     const options = [
         { value: 'Permanent Resident', label: 'Permanent Resident' },
@@ -22,22 +22,22 @@ const FirstPage = (props) => {
     ]
     const [startDate, setStartDate] = useState(new Date());
     const optionsCountry = useMemo(() => countryList().getData(), [])
-    
+
 
 
     const data = {
         currentLocation: "",
         LegalStatus: "",
         date: startDate,
-        Q1:{
-            Yes : false,
+        Q1: {
+            Yes: false,
             No: false
         },
         Q2: {
             Yes: false,
             No: false
         },
-        
+
         Q4: {
             Yes: false,
             No: false
@@ -54,17 +54,17 @@ const FirstPage = (props) => {
     }
     const [SaveDataPageOne, setSaveDataPageOne] = useState(data)
 
-    const handleOnChange = (Flag,Question) => {
+    const handleOnChange = (Flag, Question) => {
         let CloneState = _.cloneDeep(SaveDataPageOne);
-        
-        if (Flag === "Yes"){
+
+        if (Flag === "Yes") {
             CloneState[Question].Yes = true;
             CloneState[Question].No = false;
-        }else if (Flag === "No"){   
+        } else if (Flag === "No") {
             CloneState[Question].Yes = false;
             CloneState[Question].No = true;
         }
-        if (Question === "QM"){
+        if (Question === "QM") {
             CloneState.QM.Ans1 = false;
             CloneState.QM.Ans2 = false;
             CloneState.QM.Ans3 = false;
@@ -73,55 +73,55 @@ const FirstPage = (props) => {
         setSaveDataPageOne(CloneState)
     }
 
-    const ChangeNation = (value,Id) => {
-       
+    const ChangeNation = (value, Id) => {
+
         let CloneState = _.cloneDeep(SaveDataPageOne);
         CloneState[Id] = value;
-        setSaveDataPageOne(CloneState)    
+        setSaveDataPageOne(CloneState)
     }
 
     const handleSetStartDate = (value) => {
         let CloneState = _.cloneDeep(SaveDataPageOne);
-       
+
         CloneState.date = new Date(value);
         setSaveDataPageOne(CloneState)
     }
 
     useEffect(() => {
         const items = window.localStorage.getItem('SaveDataPageOne');
-    
-        if (items){
+
+        if (items) {
             setSaveDataPageOne(JSON.parse(items));
         }
     }, [])
     useEffect(() => {
         window.localStorage.setItem('SaveDataPageOne', JSON.stringify(SaveDataPageOne))
     }, [SaveDataPageOne])
-    
+
     return (
         <>
-        <Header/>
-        
+            <Header />
+
             <div className="first-content">
                 <div className="left" >
-                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>2/15</div>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>2/16</div>
                     <div className="Current-location" style={{ fontSize: "20px", fontWeight: "600" }}>Application context</div>
                     <div className="Current-location">Current location</div>
                     <div className="Current-location">Give details of the applicant's current location.</div>
                     <div className='status'>
                         <span className='title-status'>Current location:</span>
-                        <Select options={optionsCountry} className="select" 
+                        <Select options={optionsCountry} className="select"
                             value={SaveDataPageOne.currentLocation}
                             //selected={SaveDataPageOne.currentLocation}
                             //defaultValue={SaveDataPageOne.currentLocation}
-                            onChange={(Event) => ChangeNation(Event,"currentLocation")}/>
-                            
+                            onChange={(Event) => ChangeNation(Event, "currentLocation")} />
+
                     </div>
                     <div className='status'>
                         <span className='title-status'>Legal status:</span>
-                        <Select options={options} className="select" 
+                        <Select options={options} className="select"
                             value={SaveDataPageOne.LegalStatus}
-                        onChange={(Event) => ChangeNation(Event, "LegalStatus")}/>
+                            onChange={(Event) => ChangeNation(Event, "LegalStatus")} />
                     </div>
                     <div style={{ fontSize: "20px", fontWeight: "600", paddingLeft: "10px" }}>Current application</div>
                     <div className='Current-location'>
@@ -129,16 +129,16 @@ const FirstPage = (props) => {
                         <div class="form-check-label" >
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" 
-                                    onChange={()=>handleOnChange("Yes","Q1")}  checked={SaveDataPageOne.Q1.Yes}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                    onChange={() => handleOnChange("Yes", "Q1")} checked={SaveDataPageOne.Q1.Yes} />
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
-                                    onChange={() => handleOnChange("No","Q1")}
-                                    checked={SaveDataPageOne.Q1.No}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                    onChange={() => handleOnChange("No", "Q1")}
+                                    checked={SaveDataPageOne.Q1.No} />
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     No
                                 </label>
@@ -151,15 +151,15 @@ const FirstPage = (props) => {
                         <div class="form-check-label" >
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault2" 
-                                    onChange={() => handleOnChange("Yes", "Q2")} checked={SaveDataPageOne.Q2.Yes}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2"
+                                    onChange={() => handleOnChange("Yes", "Q2")} checked={SaveDataPageOne.Q2.Yes} />
                                 <label class="form-check-label" >
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault2" 
-                                    onChange={() => handleOnChange("No", "Q2")} checked={SaveDataPageOne.Q2.No}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2"
+                                    onChange={() => handleOnChange("No", "Q2")} checked={SaveDataPageOne.Q2.No} />
                                 <label class="form-check-label" >
                                     No
                                 </label>
@@ -173,25 +173,25 @@ const FirstPage = (props) => {
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefaultType" id="ans1"
                                 checked={SaveDataPageOne.QM.Ans1}
-                                onChange={() => handleOnChange("Ans1","QM")} 
-                                />
+                                onChange={() => handleOnChange("Ans1", "QM")}
+                            />
                             <label class="form-check-label" for="flexRadioDefault2">
                                 First Work and Holiday visa (subclass 462)
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefaultType" 
-                                onChange={() => handleOnChange("Ans2", "QM")} 
-                                checked={SaveDataPageOne.QM.Ans2}/>
+                            <input class="form-check-input" type="radio" name="flexRadioDefaultType"
+                                onChange={() => handleOnChange("Ans2", "QM")}
+                                checked={SaveDataPageOne.QM.Ans2} />
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Second Work and Holiday visa (subclass 462)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefaultTypeAns3" 
-                                onChange={() => handleOnChange("Ans3","QM")} 
-                                checked={SaveDataPageOne.QM.Ans3}/>
+                            <input class="form-check-input" type="radio" name="flexRadioDefaultTypeAns3"
+                                onChange={() => handleOnChange("Ans3", "QM")}
+                                checked={SaveDataPageOne.QM.Ans3} />
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Third Work and Holiday visa (subclass 462)
                             </label>
@@ -204,15 +204,15 @@ const FirstPage = (props) => {
                             <div class="form-check-label" >
                                 <div className="check-radio"></div>
                                 <div className="check-radio-answer">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault3" 
-                                    onChange={() => handleOnChange("Yes", "Q4")} checked={SaveDataPageOne.Q4.Yes}/>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault3"
+                                        onChange={() => handleOnChange("Yes", "Q4")} checked={SaveDataPageOne.Q4.Yes} />
                                     <label class="form-check-label" >
                                         Yes
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault3" 
-                                    onChange={() => handleOnChange("No", "Q4")} checked={SaveDataPageOne.Q4.No}/>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault3"
+                                        onChange={() => handleOnChange("No", "Q4")} checked={SaveDataPageOne.Q4.No} />
                                     <label class="form-check-label">
                                         No
                                     </label>
@@ -223,9 +223,9 @@ const FirstPage = (props) => {
 
                     </div>
                     <div className="Current-location" style={{ fontSize: "20px", fontWeight: "600" }}>Proposed arrival date</div>
-                    <div className="DatePicker" style={{display:"flex"}}>
-                        <div style={{paddingRight: "16em", paddingLeft: "10px"}}>Proposed arrival date</div>
-                        <div className="child-date" ><DatePicker 
+                    <div className="DatePicker" style={{ display: "flex" }}>
+                        <div style={{ paddingRight: "16em", paddingLeft: "10px" }}>Proposed arrival date</div>
+                        <div className="child-date" ><DatePicker
                             selected={Date.parse(SaveDataPageOne.date)} onChange={(date) => handleSetStartDate(date)} />  </div>
                     </div>
 
@@ -239,15 +239,15 @@ const FirstPage = (props) => {
                             <div class="form-check-label" >
                                 <div className="check-radio"></div>
                                 <div className="check-radio-answer">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault4" 
-                                        onChange={() => handleOnChange("Yes", "Q5")} checked={SaveDataPageOne.Q5.Yes}/>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault4"
+                                        onChange={() => handleOnChange("Yes", "Q5")} checked={SaveDataPageOne.Q5.Yes} />
                                     <label class="form-check-label" >
                                         Yes
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault4" 
-                                        onChange={() => handleOnChange("No", "Q5")} checked={SaveDataPageOne.Q5.No}/>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault4"
+                                        onChange={() => handleOnChange("No", "Q5")} checked={SaveDataPageOne.Q5.No} />
                                     <label class="form-check-label" >
                                         No
                                     </label>
@@ -255,8 +255,10 @@ const FirstPage = (props) => {
                             </div>
                         </div>
                     </div>
-                    <button onClick={() => navigate('/secondpage')} 
-                    style={{ marginLeft: "60em", marginBottom: "10px" }}>Next</button>
+            
+                    <div style={{ display: "flex", paddingBottom: "10px", paddingTop: "10px" }}>
+                        <button onClick={() => navigate('/signaturepage')} style={{ marginLeft: "10px" }}>Previous</button>
+                        <button onClick={() => navigate('/secondpage')} style={{ marginLeft: "auto", marginRight: "auto" }}>Next</button></div>
                 </div>
                 <div className="right">
                     <div className="up-content">

@@ -7,16 +7,16 @@ import { useState } from 'react';
 import _, { cloneDeep } from "lodash"
 const ThirdPage = (props) => {
     const navigate = useNavigate();
-    
+
     const formatDate = (input) => {
         let datePart = input.match(/\d+/g),
             year = datePart[0].substring(2), // get only two digits
             month = datePart[1], day = datePart[2];
 
-        return day + '/' + month + '/' + "20"+year;
+        return day + '/' + month + '/' + "20" + year;
     }
 
-    
+
 
 
     const handleOnChange = (Flag, Question) => {
@@ -49,18 +49,18 @@ const ThirdPage = (props) => {
 
     let CloneData = _.cloneDeep(window.localStorage.getItem('SaveDataPageTwo'));
     CloneData = JSON.parse(CloneData)
-    return(
+    return (
         <>
-        <Header/>
-        <div className='third-content'>
+            <Header />
+            <div className='third-content'>
                 <div className='left'> <div>
-                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>4/15</div>
+                    <div style={{ justifyContent: "center", alignContent: "center", display: "flex" }}>4/16</div>
                     <div style={{ fontSize: "20px", fontWeight: "600" }}>Critical data confirmation</div>
                     <div>All information provided is important to the processing of this application.</div>
                     <div>If the information included on this page is incorrect, it may lead to denial of permission to board an aircraft to Australia, even if a visa has been granted.</div>
                     <div>Confirm that the following information is correct and that it is in the correct fields.</div>
 
-                    <div style={{display: "flex"}}>
+                    <div style={{ display: "flex" }}>
                         <span>Family name:</span>
                         <span style={{ paddingLeft: "50px" }}>
                             {CloneData?.familyName ? CloneData?.familyName : "default"}</span>
@@ -73,14 +73,14 @@ const ThirdPage = (props) => {
                     <div style={{ display: "flex" }}>
                         <span>Sex:</span>
                         <span style={{ paddingLeft: "115px" }}>
-                            {CloneData?.Q1?.Yes === false ? 
-                            <span>Male</span> :
-                            <span>Female</span>}
+                            {CloneData?.Q1?.Yes === false ?
+                                <span>Male</span> :
+                                <span>Female</span>}
                         </span>
                     </div>
                     <div style={{ display: "flex" }}>
                         <span>Date of birth:</span>
-                        <span style={{ paddingLeft: "50px" }}>{CloneData?.dateOfBirth ? 
+                        <span style={{ paddingLeft: "50px" }}>{CloneData?.dateOfBirth ?
                             formatDate(CloneData.dateOfBirth.substring(0, 10)) : "default"}</span>
                     </div>
                     <div style={{ display: "flex" }}>
@@ -101,15 +101,15 @@ const ThirdPage = (props) => {
                         <div class="form-check-label" >
                             <div className="check-radio"></div>
                             <div className="check-radio-answer">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" 
-                                    onChange={() => handleOnChange("Yes", "QP3")} checked={SaveDataPageThree.QP3.Yes}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    onChange={() => handleOnChange("Yes", "QP3")} checked={SaveDataPageThree.QP3.Yes} />
                                 <label class="form-check-label" >
                                     Yes
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" 
-                                    onChange={() => handleOnChange("No", "QP3")} checked={SaveDataPageThree.QP3.No}/>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    onChange={() => handleOnChange("No", "QP3")} checked={SaveDataPageThree.QP3.No} />
                                 <label class="form-check-label" >
                                     No
                                 </label>
@@ -117,11 +117,11 @@ const ThirdPage = (props) => {
 
                         </div>
                     </div>
-                    <div style={{ display: "flex" , paddingBottom:"10px"}}>
+                    <div style={{ display: "flex", paddingBottom: "10px" }}>
                         <button onClick={() => navigate('/secondpage')} style={{ marginLeft: "10px" }}>Previous</button>
-                        <button onClick={() => navigate('/fourthpage')} style={{ marginLeft: "60em" }}>Next</button>
+                        <button onClick={() => navigate('/fourthpage')} style={{ marginLeft: "auto", marginRight: "auto" }}>Next</button>
                     </div>
-                    
+
                 </div></div>
                 <div className="right">
                     <div className="up-content">
@@ -144,11 +144,11 @@ const ThirdPage = (props) => {
                         </div>
                     </div>
                 </div>
-            
-           </div>
+
+            </div>
         </>
 
-        
+
     )
 }
 export default ThirdPage;
