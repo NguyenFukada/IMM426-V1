@@ -29,23 +29,23 @@ const Payment = () => {
             <div className="payment-content">
                 <div >
                     <table className="table-payment">
-                            <tr >
-                                <th className="align-left ">Reference <abbr title="number">no.</abbr></th>
-                                <th className="align-left">Name</th>
-                                <th className="align-left">Date of birth</th>
-                                <th className="align-left">Amount (<abbr title="Australian Dollars">AUD</abbr>)</th>
-                            </tr>
-                        
+                        <tr >
+                            <th className="align-left ">Reference <abbr title="number">no.</abbr></th>
+                            <th className="align-left">Name</th>
+                            <th className="align-left">Date of birth</th>
+                            <th className="align-left">Amount (<abbr title="Australian Dollars">AUD</abbr>)</th>
+                        </tr>
+
                         <tbody>
 
                             <tr>
                                 <td className="align-left">EGOWKWNV3R2</td>
-                                <td className="align-left">{CloneData?.familyName 
-                                && CloneData?.givenName ? CloneData?.familyName+" "+CloneData.givenName : "default"}</td>
+                                <td className="align-left">{CloneData?.familyName
+                                    && CloneData?.givenName ? CloneData?.familyName + " " + CloneData.givenName : "default"}</td>
                                 <td className="align-left">{CloneData?.dateOfBirth ?
                                     formatDate(CloneData.dateOfBirth.substring(0, 10)) : "default"}</td>
                                 <td className="align-left">XXX.XX</td>
-                                
+
                             </tr>
 
                         </tbody>
@@ -62,21 +62,21 @@ const Payment = () => {
                         <div className="check-radio"></div>
                         <div className="form-check-label" >
                             <div className="check-radio-answer">
-                                <input className="form-check-input" type="radio" name="flexRadioDefault"/>
+                                <input className="form-check-input" type="radio" name="flexRadioDefault" />
                                 <label className="form-check-label" >
                                     Debit/credit card
                                 </label>
                             </div>
                             <div className="form-check">
                                 <input className="form-check-input" type="radio" name="flexRadioDefault"
-                                    />
+                                />
                                 <label className="form-check-label" >
                                     PayPal
                                 </label>
                             </div>
                             <div className="form-check">
                                 <input className="form-check-input" type="radio" name="flexRadioDefault"
-/>
+                                />
                                 <label className="form-check-label" >
                                     UnionPay
                                 </label>
@@ -93,9 +93,9 @@ const Payment = () => {
                     </div>
                     <div className="flow">Payment by debit/credit card</div>
                     <div>
-                        <img src={visa} className="img-payment"/>
+                        <img src={visa} className="img-payment" />
                         <img src={mastercard} className="img-payment" />
-                        <img src={american_express} className="img-payment" />     
+                        <img src={american_express} className="img-payment" />
                         <img src={diners} className="img-payment" />
                         <img src={jcb} className="img-payment" />
                     </div>
@@ -103,12 +103,12 @@ const Payment = () => {
                     <div className="flow">Cardholder Address</div>
                     <div className='status'>
                         <span className='title-status'>Country</span>
-                        <Select options={optionsCountry} className="select"/>
+                        <Select options={optionsCountry} className="select" />
                     </div>
                     <div className='parent'>
                         <label className="title">Address 1*</label>
-                        <span className="inputform"><input className='form-control col-6' 
-                        placeholder="require"
+                        <span className="inputform"><input className='form-control col-6'
+                            placeholder="require"
                         ></input></span>
                     </div>
                     <div className='parent'>
@@ -116,13 +116,13 @@ const Payment = () => {
                         <span className="inputform"><input className='form-control col-6'
                         ></input></span>
                     </div>
-                    <div className='parent'> 
+                    <div className='parent'>
                         <label className="title">City*</label>
                         <span className="inputform"><input className='form-control col-6'
                             placeholder="require"
                         ></input></span>
                     </div>
-                    <div className='parent'> 
+                    <div className='parent'>
                         <label className="title">State/Province/Region *</label>
                         <span className="inputform"><input className='form-control col-6'
                             placeholder="require"
@@ -140,6 +140,43 @@ const Payment = () => {
                         <span className="inputform"><input className='form-control col-6'
                             placeholder="require"
                         ></input></span>
+                    </div>
+                    <div className="parent">
+                        <label className="title">Expiry date (MM/YY) *</label>
+                        <select>
+                            <option value={1}>01</option>
+                            <option value={2}>02</option>
+                            <option value={3}>03</option>
+                            <option value={4}>04</option>
+                            <option value={5}>06</option>
+                            <option value={6}>06</option>
+                            <option value={7}>07</option>
+                            <option value={8}>08</option>
+                            <option value={9}>09</option>
+                            <option value={10}>10</option>
+                            <option value={11}>11</option>
+                            <option value={12}>12</option>
+                        </select>
+                        <select className="YY" style={{ marginLeft: "20px" }}>
+                            <option value={23}>23</option>
+                            <option value={24}>24</option>
+                            <option value={25}>25</option>
+                            <option value={26}>26</option>
+                            <option value={27}>27</option>
+                            <option value={28}>28</option>
+                            <option value={29}>29</option>
+                            <option value={30}>30</option>
+                            <option value={31}>31</option>
+                            <option value={32}>32</option>
+                            <option value={33}>33</option>
+                            <option value={34}>34</option>
+                            <option value={35}>35</option>
+                            <option value={36}>36</option>
+                            <option value={37}>37</option>
+                            <option value={37}>38</option>
+                            <option value={39}>39</option>
+                            <option value={40}>40</option>
+                        </select>
                     </div>
                     <div className='parent'>
                         <label className="title">Name on debit/credit card *</label>
@@ -168,8 +205,8 @@ const Payment = () => {
                         <button onClick={() => navigate('/demo')} style={{ marginLeft: "40em" }}>Submit</button>
                     </div>
                 </div>
-                
-            </div> 
+
+            </div>
         </>
 
     )
